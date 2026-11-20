@@ -1,4 +1,4 @@
-# Validador y Blindaje de Seguridad para Pipelines RAG - TAVARDT México
+# Validador y Blindaje de Seguridad para Pipelines RAG
 
 > Auditoría de Aislamiento de Contexto, Prevención de Inyección Indirecta y Protección Defensiva de IA
 
