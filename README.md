@@ -13,7 +13,7 @@ El ecosistema de Recuperación Aumentada por Generación (RAG) introduce vectore
 
 Este repositorio proporciona tanto una aplicación web interactiva que se ejecuta 100% en el navegador como una herramienta CLI en Python para auditar arquitecturas RAG y generar plantillas de blindaje defensivo.
 
-## Aplicación Web Interactiva (GitHub Pages)
+## Aplicación Web Interactiva
 
 Acceda a la herramienta online y audite su pipeline en tiempo real:
 
