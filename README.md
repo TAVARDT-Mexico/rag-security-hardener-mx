@@ -1,51 +1,68 @@
-# Validador y Blindaje de Seguridad para Pipelines RAG - TAVARDT México
+# Hub de Hardening y Blindaje de Seguridad en Pipelines RAG
 
-> Auditoría de Aislamiento de Contexto, Prevención de Inyección Indirecta y Protección Defensiva de IA
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-5b3cf5.svg)](https://tavardt-mexico.github.io/rag-security-hardener-mx/)
+[![Jurisdicción](https://img.shields.io/badge/Jurisdicci%C3%B3n-México-00C853.svg)](https://ag.tavardt.com/mx/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![OWASP LLM](https://img.shields.io/badge/OWASP-LLM%20Top%2010-red.svg)](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+[![MITRE ATLAS](https://img.shields.io/badge/MITRE-ATLAS%20Matrix-orange.svg)](https://atlas.mitre.org/)
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Active-brightgreen)](https://tavardt-mexico.github.io/rag-security-hardener-mx/)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Security: OWASP LLM](https://img.shields.io/badge/Security-OWASP%20LLM01%20%7C%20LLM02-red.svg)](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+**Hub de Arquitectura Defensiva y Blueprints de Hardening para Pipelines RAG (Retrieval-Augmented Generation)**
 
-## Visión General de la Arquitectura y Seguridad RAG
+Desarrollado y mantenido por la división de ingeniería de seguridad en inteligencia artificial de **[TAVARDT Mexico](https://ag.tavardt.com/mx/)**.
 
-El ecosistema de Recuperación Aumentada por Generación (RAG) introduce vectores críticos de vulnerabilidad en aplicaciones corporativas de inteligencia artificial. Al ingerir documentos externos y bases de conocimiento para alimentar el contexto de los modelos de lenguaje (LLMs), la aplicación queda expuesta a Inyección Indirecta de Prompt (OWASP LLM01) y Fuga de Datos Multi-inquilino (OWASP LLM02).
-
-Este repositorio proporciona tanto una aplicación web interactiva que se ejecuta 100% en el navegador como una herramienta CLI en Python para auditar arquitecturas RAG y generar plantillas de blindaje defensivo.
-
-## Aplicación Web Interactiva
-
-Acceda a la herramienta online y audite su pipeline en tiempo real:
-
-- [https://tavardt-mexico.github.io/rag-security-hardener-mx/](https://tavardt-mexico.github.io/rag-security-hardener-mx/)
-
-## Uso del Scanner CLI (Python)
-
-La herramienta `rag_security_hardener.py` funciona exclusivamente con la biblioteca estándar de Python (sin dependencias externas) y permite automatizar la auditoría en pipelines de CI/CD o entornos locales.
-
-```bash
-# Executar avaliacao interativa com parametros padrao
-python rag_security_hardener.py
-
-# Exportar middleware defensivo para uso imediato em seu pipeline
-python rag_security_hardener.py --export-blueprint secure_rag_middleware.py
-
-# Executar auditoria em modo JSON para integracao em CI/CD
-python rag_security_hardener.py --ingestion 3 --vector-db 3 --context-boundary 3 --indirect-filter 3 --json
-```
-
-## Controles Arquitectónicos y Mitigaciones Defensivas
-
-1. **Aislamiento de Contexto**: Encapsulación estricta del contexto recuperado utilizando etiquetas XML delimitadoras (`<untrusted_context>`) e instrucciones de sistema seguras.
-2. **Prevención de Inyección Indirecta**: Sanitización heurística de instrucciones incrustadas y anomalías semánticas en documentos ingeridos.
-3. **Aislamiento Multi-inquilino (Multi-Tenant RBAC)**: Segregación estricta de vectores por namespaces y validación de permisos en tiempo de consulta.
-4. **Puerta de Salida y Supervisión de Citas**: Verificación de atribución de respuestas y enmascaramiento activo de datos confidenciales.
+***
 
 ## Portales Oficiales
 
-- **Portal Oficial TAVARDT**: [https://ag.tavardt.com/mx/](https://ag.tavardt.com/mx/)
-- **Centro de Herramientas**: [https://tools.tavardt.com/mx/](https://tools.tavardt.com/mx/)
-- **Contacto**: [https://ag.tavardt.com/mx/contact/](https://ag.tavardt.com/mx/contact/)
+* **Portal Institucional**: [https://ag.tavardt.com/mx/](https://ag.tavardt.com/mx/)
+* **Central de Herramientas**: [https://tools.tavardt.com/mx/](https://tools.tavardt.com/mx/)
+* **Canal de Atención y Soporte Técnico**: [https://ag.tavardt.com/mx/contacto/](https://ag.tavardt.com/mx/contacto/)
 
----
-&copy; 2026 TAVARDT México. Todos los derechos reservados.
+***
+
+## Demostración Online y Hub de Arquitectura Defensiva
+
+Puede consultar la especificación técnica corporativa, las pruebas de diagnóstico arquitectónico y los blueprints de mitigación directamente desde el navegador:
+
+* **[Aplicación Web Oficial en GitHub Pages](https://tavardt-mexico.github.io/rag-security-hardener-mx/)**
+* **[Central de Herramientas TAVARDT](https://tools.tavardt.com/mx/)**
+
+> [!NOTE]
+> **Alcance de Ejecución Técnica:** Este hub web proporciona especificaciones de arquitectura defensiva y blueprints de configuración. Las auditorías activas de bases vectoriales e integridad de contexto requieren credenciales de entorno y ejecución en la infraestructura de la aplicación mediante la herramienta CLI oficial (`rag_security_auditor.py`). Las páginas web en entornos sandbox de navegador no pueden conectarse directamente a clústeres vectoriales privados.
+
+***
+
+## Blueprints Técnicos de Hardening
+
+1. **rag-security-policy.yml:** Políticas corporativas de seguridad que definen límites de chunks, etiquetas XML de aislamiento de contexto y reglas de validación semántica.
+2. **rag_chunk_sanitizer.py:** Pipeline de sanitización para eliminar caracteres invisibles Unicode, secuencias de escape y marcadores de inyección de prompt antes de generar embeddings.
+3. **vector_acl_filter.json:** Esquema de consulta vectorial que impone filtros obligatorios de control de acceso (RBAC/ACL) por usuario y organización para evitar la exfiltración de datos.
+4. **rag_context_template.xml:** Plantilla de encapsulación de contexto delimitada por etiquetas XML con directivas estrictas de no ejecución para modelos LLM.
+5. **rag_security_auditor.py:** Utilidad CLI local determinista ejecutada en el entorno de la aplicación para auditar directamente configuraciones de pipelines RAG y verificar cumplimiento con OWASP LLM.
+
+***
+
+## Uso de la Herramienta CLI Determinista
+
+Para ejecutar la inspección determinista directamente en el entorno de la aplicación RAG:
+
+```bash
+# 1. Descargar script de auditoría desde el repositorio oficial
+curl -sO https://raw.githubusercontent.com/TAVARDT-Mexico/rag-security-hardener-mx/main/rag_security_auditor.py
+
+# 2. Inspeccionar pipeline y especificaciones defensivas
+python3 rag_security_auditor.py
+
+# 3. Exportar diagnóstico en formato estructurado JSON
+python3 rag_security_auditor.py -json
+```
+
+***
+
+## Gobernanza y Soberanía
+
+* **Organización:** TAVARDT-Mexico
+* **Jurisdicción:** Mexico
+* **Cumplimiento de Estándares:** OWASP Top 10 for LLM Applications (LLM01, LLM07), MITRE ATLAS Framework y Arquitectura Zero Trust.
+
+Desarrollado por la División de Ciberseguridad e Inteligencia Artificial de **[TAVARDT Mexico](https://ag.tavardt.com/mx/)**. Todos los derechos reservados.
