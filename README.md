@@ -11,9 +11,6 @@ Desarrollado y mantenido por la división de ingeniería de seguridad en intelig
 
 ***
 
-
-***
-
 ## Demostración Online y Hub de Arquitectura Defensiva
 
 Puede consultar la especificación técnica corporativa, las pruebas de diagnóstico arquitectónico y los blueprints de mitigación directamente desde el navegador:
@@ -50,6 +47,14 @@ python3 rag_security_auditor.py
 # 3. Exportar diagnóstico en formato estructurado JSON
 python3 rag_security_auditor.py -json
 ```
+
+***
+
+## Enlaces Útiles
+
+* **Portal Corporativo:** https://ag.tavardt.com/mx/
+* **Suite de Diagnósticos:** https://tools.tavardt.com/mx/
+* **Contacto Técnico:** https://ag.tavardt.com/mx/contacto/
 
 ***
 
