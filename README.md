@@ -42,7 +42,7 @@ Para ejecutar la inspección determinista directamente en el entorno de la aplic
 
 ```bash
 # 1. Descargar script de auditoría desde el repositorio oficial
-curl -sO https://raw.githubusercontent.com/TAVARDT-Mexico/rag-security-hardener-mx/main/rag_security_auditor.py
+curl -sO https://raw.githubusercontent.com/TAVARDT/rag-security-hardener-mx/main/rag_security_auditor.py
 
 # 2. Inspeccionar pipeline y especificaciones defensivas
 python3 rag_security_auditor.py
