@@ -10,12 +10,12 @@
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5D7F8Z48');</script>
+  })(window,document,'script','dataLayer','GTM-KMZZVMQ5');</script>
   
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hub de Arquitectura Defensiva y Hardening de Seguridad en Pipelines RAG | TAVARDT Mexico</title>
+  <title>Hub de Arquitectura Defensiva y Hardening de Seguridad en Pipelines RAG | TAVARDT Espana</title>
   <meta name="description" content="Especificación técnica corporativa, blueprints de mitigación de Indirect Prompt Injection, aislamiento de contexto vectorial, sanitización de chunks y herramientas CLI deterministas.">
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="shortcut icon" href="./favicon.ico">
@@ -25,19 +25,19 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="TAVARDT Mexico">
+  <meta property="og:site_name" content="TAVARDT Espana">
   <meta property="og:title" content="Hub de Arquitectura Defensiva y Hardening de Seguridad en Pipelines RAG | TAVARDT">
   <meta property="og:description" content="Especificações técnicas corporativas e blueprints de proteção contra Prompt Injection, exfiltração de dados e envenenamento em pipelines RAG.">
   <meta property="og:url" content="https://tavardt-mexico.github.io/rag-security-hardener-mx/">
   <meta property="og:image" content="https://tavardt-mexico.github.io/rag-security-hardener-mx/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="TAVARDT Mexico">
-  <meta property="og:locale" content="es_ES">
+  <meta property="og:image:alt" content="TAVARDT Espana">
+  <meta property="og:locale" content="es_MX">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@tavardt">
-  <meta name="twitter:title" content="Hub de Hardening RAG &amp; Segurança de IA | TAVARDT Mexico">
+  <meta name="twitter:title" content="Hub de Hardening RAG &amp; Segurança de IA | TAVARDT Espana">
   <meta name="twitter:description" content="Mitigação de vulnerabilidades em bancos vetoriais e pipelines RAG com blueprints de arquitetura e CLI determinístico.">
   <meta name="twitter:image" content="https://tavardt-mexico.github.io/rag-security-hardener-mx/og-image.jpg">
 
@@ -1002,7 +1002,7 @@
   </style>
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D7F8Z48"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMZZVMQ5"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="tavardt-header">
@@ -1432,14 +1432,14 @@ if __name__ == "__main__":
       if (sel) sel.value = tab;
       const box = document.getElementById('code-box');
       if (box && codeTemplates[tab]) {
-        box.innerText = codeTemplates[tab];
+        box.textContent = codeTemplates[tab];
       }
     }
 
     function copyCode() {
       const code = codeTemplates[activeTab];
       if (!code) return;
-      navigator.clipboard.writeText(code).then(() => {
+      navigator.clipboard.writeText(code).catch(() => {}).then(() => {
         const btn = document.getElementById('btn-copy-code');
         if (btn) {
           const orig = btn.innerText;
@@ -1470,7 +1470,7 @@ if __name__ == "__main__":
       const codeEl = document.getElementById('cli-terminal-code');
       if (!codeEl) return;
       const code = codeEl.innerText;
-      navigator.clipboard.writeText(code).then(() => {
+      navigator.clipboard.writeText(code).catch(() => {}).then(() => {
         const btn = document.getElementById('btn-copy-cli');
         if (!btn) return;
         const textSpan = btn.querySelector('.btn-copy-cli-text');
