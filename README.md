@@ -58,10 +58,4 @@ python3 rag_security_auditor.py -json
 
 ***
 
-## Gobernanza y Soberanía
-
-* **Organización:** TAVARDT-Mexico
-* **Jurisdicción:** Mexico
-* **Cumplimiento de Estándares:** OWASP Top 10 for LLM Applications (LLM01, LLM07), MITRE ATLAS Framework y Arquitectura Zero Trust.
-
-Desarrollado por la División de Ciberseguridad e Inteligencia Artificial de **TAVARDT Mexico**. Todos los derechos reservados.
+© 2026 TAVARDT. Todos los derechos reservados.
