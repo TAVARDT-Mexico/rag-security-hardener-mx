@@ -1116,7 +1116,53 @@ python rag_security_auditor.py</div>
 </section>
 <section class="faq-section">
 <h2 class="faq-title">Preguntas Frecuentes sobre Seguridad en Pipelines RAG y Bases de Datos Vectoriales</h2>
-<div class="faq-list"><div class="faq-item"><div class="faq-question">¿Por qué la validación de seguridad de pipelines RAG no debe conectar bases de datos vectoriales a través del navegador?<span class="faq-toggle">+</span></div><div class="faq-answer">Las bases de datos vectoriales de producción contienen credenciales de API críticas y datos confidenciales protegidos por VPC y firewalls. Conectar instancias vectoriales directamente a través del navegador expondría credenciales y violaría el principio de mínimo privilegio. Por ello, TAVARDT proporciona blueprints arquitectónicos y herramientas CLI para auditorías locales y seguras.</div></div><div class="faq-item"><div class="faq-question">¿Qué es Indirect Prompt Injection y cómo compromete las arquitecturas RAG?<span class="faq-toggle">+</span></div><div class="faq-answer">El Indirect Prompt Injection ocurre cuando documentos externos indexados en la base de datos vectorial contienen instrucciones maliciosas ocultas. Cuando el pipeline RAG recupera estos fragmentos y los concatena en el prompt del LLM, el modelo puede desviarse de sus instrucciones originales, ejecutando comandos indebidos o exfiltrando datos confidenciales.</div></div><div class="faq-item"><div class="faq-question">¿Cómo mitiga el aislamiento de contexto con delimitadores estructurados las inyecciones indirectas?<span class="faq-toggle">+</span></div><div class="faq-answer">Al encapsular los datos recuperados en bloques delimitados (como etiquetas XML &lt;context&gt;...&lt;/context&gt;) e instruir al modelo para que trate el contenido estrictamente como datos pasivos de referencia, se crea una barrera semántica clara que impide que el intérprete del LLM trate instrucciones de terceros como comandos ejecutables.</div></div><div class="faq-item"><div class="faq-question">¿Cuál es la importancia del control de acceso basado en metadatos (ACL/RBAC) en búsquedas vectoriales?<span class="faq-toggle">+</span></div><div class="faq-answer">En entornos corporativos, diferentes usuarios disponen de distintos niveles de autorización. El control por metadatos asegura que la consulta vectorial aplique filtros obligatorios de identidad y rol antes de la búsqueda por similitud, impidiendo que un usuario recupere fragmentos confidenciales a los que no tiene derecho de acceso.</div></div><div class="faq-item"><div class="faq-question">¿Qué buenas prácticas deben adoptarse en el pipeline de ingesta de documentos?<span class="faq-toggle">+</span></div><div class="faq-answer">El pipeline de ingesta debe realizar sanitización de texto, eliminación de caracteres de control invisibles, verificación de integridad de la fuente (source verification), fragmentación (chunking) estandarizada y detección de patrones de inyección antes de la generación y almacenamiento de embeddings en la base de datos vectorial.</div></div></div>
+<div class="faq-list">
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)" type="button">
+      <span>¿Por qué la validación de seguridad de pipelines RAG no debe conectar bases de datos vectoriales a través del navegador?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-body">
+      Las bases de datos vectoriales de producción contienen credenciales de API críticas y datos confidenciales protegidos por VPC y firewalls. Conectar instancias vectoriales directamente a través del navegador expondría credenciales y violaría el principio de mínimo privilegio. Por ello, TAVARDT proporciona blueprints arquitectónicos y herramientas CLI para auditorías locales y seguras.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)" type="button">
+      <span>¿Qué es Indirect Prompt Injection y cómo compromete las arquitecturas RAG?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-body">
+      El Indirect Prompt Injection ocurre cuando documentos externos indexados en la base de datos vectorial contienen instrucciones maliciosas ocultas. Cuando el pipeline RAG recupera estos fragmentos y los concatena en el prompt del LLM, el modelo puede desviarse de sus instrucciones originales, ejecutando comandos indebidos o exfiltrando datos confidenciales.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)" type="button">
+      <span>¿Cómo mitiga el aislamiento de contexto con delimitadores estructurados las inyecciones indirectas?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-body">
+      Al encapsular los datos recuperados en bloques delimitados (como etiquetas XML <context>...</context>) e instruir al modelo para que trate el contenido estrictamente como datos pasivos de referencia, se crea una barrera semántica clara que impide que el intérprete del LLM trate instrucciones de terceros como comandos ejecutables.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)" type="button">
+      <span>¿Cuál es la importancia del control de acceso basado en metadatos (ACL/RBAC) en búsquedas vectoriales?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-body">
+      En entornos corporativos, diferentes usuarios disponen de distintos niveles de autorización. El control por metadatos asegura que la consulta vectorial aplique filtros obligatorios de identidad y rol antes de la búsqueda por similitud, impidiendo que un usuario recupere fragmentos confidenciales a los que no tiene derecho de acceso.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-btn" onclick="toggleFaq(this)" type="button">
+      <span>¿Qué buenas prácticas deben adoptarse en el pipeline de ingesta de documentos?</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-body">
+      El pipeline de ingesta debe realizar sanitización de texto, eliminación de caracteres de control invisibles, verificación de integridad de la fuente (source verification), fragmentación (chunking) estandarizada y detección de patrones de inyección antes de la generación y almacenamiento de embeddings en la base de datos vectorial.
+    </div>
+  </div>
+</div>
 </section>
 
 <div class="cta-card">
